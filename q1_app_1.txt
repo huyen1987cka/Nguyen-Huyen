@@ -1,2 +1,0 @@
-NAME          READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS    IMAGES                             SELECTOR
-hello-world   3/3     3            3           3h18m   hello-world   ghcr.io/hungtran84/hello-app:2.0   app=hello-world

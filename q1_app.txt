@@ -4,7 +4,7 @@ metadata:
   annotations:
     deployment.kubernetes.io/revision: "2"
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"hello-world"},"name":"hello-world","namespace":"webapp"},"spec":{"replicas":3,"selector":{"matchLabels":{"app":"hello-world"}},"template":{"metadata":{"labels":{"app":"hello-world"}},"spec":{"containers":[{"image":"ghcr.io/hungtran84/hello-app:2.0","name":"hello-world","ports":[{"containerPort":8080}]}]}}}}
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"hello-world"},"name":"hello-world","namespace":"webapp"},"spec":{"replicas":3,"selector":{"matc>
   creationTimestamp: "2024-12-22T07:41:23Z"
   generation: 2
   labels:
@@ -31,18 +31,14 @@ spec:
       labels:
         app: hello-world
     spec:
-      containers:
+	 containers:
       - image: ghcr.io/hungtran84/hello-app:2.0
         imagePullPolicy: IfNotPresent
         name: hello-world
         ports:
         - containerPort: 8080
-          protocol: TCP
-        resources: {}
         terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
+      restartPolicy: Alwaysolicy: File
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
@@ -65,27 +61,28 @@ status:
   readyReplicas: 3
   replicas: 3
   updatedReplicas: 3
-  apiVersion: v1
+apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: "2024-12-22T08:06:34Z"
-  labels:
-    app: hello-world
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+  labels:piVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"hello-world"},"name":"hello-world","namespace":"webapp"},"spec":{"ports":[{"nodePort":30000,"port":80,">
+  crapp: hello-world "2024-12-22T12:55:02Z"
   name: hello-world
   namespace: webapp
-  resourceVersion: "6856"
-  uid: 1685ebc8-3b9b-4120-9951-6117b0c092e1
+  resourceVersion: "33480"
+  uid: a0163d93-32da-464d-a966-41e234e612b7
 spec:
-  clusterIP: 10.99.169.80
+  clusterIP: 10.103.13.177
   clusterIPs:
-  - 10.99.169.80
+  - 10.103.13.177
   externalTrafficPolicy: Cluster
   internalTrafficPolicy: Cluster
   ipFamilies:
   - IPv4
   ipFamilyPolicy: SingleStack
   ports:
-  - nodePort: 30773
+  - nodePort: 30000
     port: 80
     protocol: TCP
     targetPort: 8080
