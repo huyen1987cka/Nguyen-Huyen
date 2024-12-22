@@ -1,0 +1,7 @@
+Hello, world!
+Version: 2.0.0
+hello-world-7f5b66d6cd-n5689
+
+Hello, world!
+Version: 2.0.0
+hello-world-7f5b66d6cd-hg94h
